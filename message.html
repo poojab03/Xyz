@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You ❤️</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+      color: #1f2937;
+      font-family: 'Georgia', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .card {
+      max-width: 520px;
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      color: #be123c;
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 17px;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #fb7185;
+      transform: rotate(45deg);
+      animation: float 6s infinite ease-in;
+      opacity: 0.6;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: #fb7185;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-800px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="heart" style="left:10%; animation-delay:0s;"></div>
+  <div class="heart" style="left:25%; animation-delay:2s;"></div>
+  <div class="heart" style="left:40%; animation-delay:4s;"></div>
+  <div class="heart" style="left:55%; animation-delay:1s;"></div>
+  <div class="heart" style="left:70%; animation-delay:3s;"></div>
+  <div class="heart" style="left:85%; animation-delay:5s;"></div>
+
+  <div class="card">
+    <h1>Hey Anni ❤️</h1>
+    <p>
+      I joked. I teased. I hid behind code.<br><br>
+      But this part is just me.<br><br>
+      Somewhere between missing you and laughing with you,
+      you became my favorite constant.<br><br>
+      Distance didn’t scare me —
+      losing <b>this</b> would.<br><br>
+      Thank you for choosing me back.
+    </p>
+    <p style="margin-top:20px;">— Always yours ❤️</p>
+  </div>
+
+</body>
+</html>
