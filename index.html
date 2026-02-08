@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>One Constant</title>
+  <style>
+    body {
+      background: #020617;
+      color: #22c55e;
+      font-family: monospace;
+      padding: 40px;
+    }
+    #terminal {
+      max-width: 700px;
+      margin: auto;
+    }
+    input {
+      background: black;
+      color: #22c55e;
+      border: none;
+      font-family: monospace;
+      font-size: 16px;
+      width: 100%;
+      outline: none;
+    }
+    a {
+      color: #38bdf8;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="terminal">
+    <div id="output"></div>
+    <input id="input" autofocus />
+  </div>
+
+<script>
+const output = document.getElementById("output");
+const input = document.getElementById("input");
+
+function printLine(text) {
+  output.innerHTML += text + "<br>";
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
+const intro = [
+  "Booting feelings.exe...",
+  "Warning: emotions detected 👀",
+  "Checking distance...",
+  "Distance = annoying but irrelevant.",
+  "",
+  "Enter the one person who ruins your focus:"
+];
+
+intro.forEach((line, i) => {
+  setTimeout(() => printLine(line), i * 700);
+});
+
+let step = 0;
+
+input.addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    const value = input.value.trim().toLowerCase();
+    input.value = "";
+
+    if (step === 0) {
+      printLine("> " + value);
+
+      if (value === "anni") {
+        printLine("✔ Oh no.");
+        printLine("✔ Feelings confirmed.");
+        printLine("✔ You again.");
+        printLine("");
+        printLine("Conclusion:");
+        printLine("You are my favorite distraction ❤️");
+        printLine("");
+        printLine("Question:");
+        printLine("Wanna be mine or should I keep flirting?");
+        printLine("Type YES wisely 😏");
+        step = 1;
+      } else {
+        printLine("❌ Wrong answer.");
+        printLine("Hint: you know this one.");
+      }
+    } 
+    else if (step === 1) {
+      printLine("> " + value);
+
+      if (value === "yes") {
+        printLine("");
+        printLine("🎉 SUCCESS 🎉");
+        printLine("Relationship initialized.");
+        printLine("Clinginess level: optimal.");
+        printLine("Missing-you frequency: high.");
+        printLine("Lifetime subscription enabled 💍");
+        printLine("");
+        printLine("One last thing…");
+        printLine("This part isn't code 👀");
+        printLine('<a href="message.html" target="_blank">Click here</a>');
+        input.disabled = true;
+      } else {
+        printLine("Nice try.");
+        printLine("But we both know the correct answer 😌");
+      }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
